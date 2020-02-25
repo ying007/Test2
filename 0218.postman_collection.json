@@ -1,0 +1,638 @@
+{
+	"info": {
+		"_postman_id": "511c552c-a640-4e02-9915-fabb09044a03",
+		"name": "0218",
+		"description": "get /topics 主题首页\nget /topic/:id 主题详情\npost /topics 新建主题\npost /topics/update 编辑主题",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "主题",
+			"item": [
+				{
+					"name": "主题首页",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{ipAdress}}/topics?page=1&tab=share&limit=1&mdrender=false",
+							"host": [
+								"{{ipAdress}}"
+							],
+							"path": [
+								"topics"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "tab",
+									"value": "share"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "mdrender",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "主题首页_异常流01",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://39.107.96.138:3000/api/v1/topics?page=1&tab=share&limit=1&mdrender=false",
+									"protocol": "http",
+									"host": [
+										"39",
+										"107",
+										"96",
+										"138"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"topics"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "tab",
+											"value": "share"
+										},
+										{
+											"key": "limit",
+											"value": "1"
+										},
+										{
+											"key": "mdrender",
+											"value": "false"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "468"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d4-m19qwG2DXBsxHruMD/sfq3KXmgw\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "2.917ms"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Feb 2020 08:02:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": \"5e4b94581291843204eb2fb6\",\n            \"author_id\": \"5e37a75149f5a50bc9de297f\",\n            \"tab\": \"share\",\n            \"content\": \"Postman是一款很cool的接口测试和调试的工具\",\n            \"title\": \"Postman接口测试实战\",\n            \"last_reply_at\": \"2020-02-18T07:38:00.017Z\",\n            \"good\": false,\n            \"top\": false,\n            \"reply_count\": 0,\n            \"visit_count\": 0,\n            \"create_at\": \"2020-02-18T07:38:00.017Z\",\n            \"author\": {\n                \"loginname\": \"imtest66\",\n                \"avatar_url\": \"//gravatar.com/avatar/55f5d4da51b2b2fc02e2f8c9d1d6a244?size=48\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "主题首页2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://39.107.96.138:3000/api/v1/topics?page=1&tab=share&limit=1&mdrender=false",
+							"protocol": "http",
+							"host": [
+								"39",
+								"107",
+								"96",
+								"138"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"topics"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "tab",
+									"value": "share"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "mdrender",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新建主题",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n\"accesstoken\":\"{{accToken}}\",\n\"title\":\"123456\",\n\"tab\":\"share\",\n\"content\":\"21533\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://39.107.96.138:3000/api/v1/topics",
+							"protocol": "http",
+							"host": [
+								"39",
+								"107",
+								"96",
+								"138"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"topics"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "0218课程练习",
+			"item": [
+				{
+					"name": "数据驱动教育练习",
+					"item": [
+						{
+							"name": "新建主题数据驱动教学练习3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "48ba7432-6d5b-46be-9cdc-21c5dfb0965a",
+										"exec": [
+											"//ResponseBody 是固定写法，他拿到的是请求响应报文里的body里的所有内容",
+											"// JSON.parse 可以解析报文内容为json的数据",
+											"var jsonData=JSON.parse(responseBody);",
+											"//解析了JSON数据后，就可以通过.的方式点出JSON字符串里的每一个key.从而拿到key所对应的值（JSON数据其实就是键值对‘key-value’）",
+											"var successRes=jsonData.success;",
+											"//调用postman的测试方法(第一种)，就是pm.test(). 他有两个参数:第一个参数写预期结果，也就是你想要测试的内容，可以写中文，这样的话，可以在执行完以后，在Test Results里看到，如果成功就是pass,失败就是fail并同时给出失败原因;第二个参数是一个类似于Python里的lambda匿名函数，他是一个检查函数，用法如下：",
+											"",
+											"//第一种：Response body:Contains string",
+											"//作用：检查body里面包含你想要的预期结果的值(include括号内)，而pm.expect括号内的，你需要输入检查的范围；",
+											"pm.test(\"检查success的值是true\", function () {",
+											"pm.expect(\"\\\"\"+successRes+\"\\\"\").to.include(\"true\");",
+											"});",
+											"",
+											"console.log(\"\\\"\"+successRes+\"\\\"\")"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "accesstoken",
+											"value": "{{accesstoken}}",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "{{title}}",
+											"type": "text"
+										},
+										{
+											"key": "tab",
+											"value": "share",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "{{content}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ipAdress}}/topics",
+									"host": [
+										"{{ipAdress}}"
+									],
+									"path": [
+										"topics"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "新建主题2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7532c77b-42df-464c-8310-a2d5730cbb4f",
+								"exec": [
+									"//ResponseBody 是固定写法，他拿到的是请求响应报文里的body里的所有内容\r",
+									"// JSON.parse 可以解析报文内容为json的数据\r",
+									"var jsonData=JSON.parse(responseBody);\r",
+									"//解析了JSON数据后，就可以通过.的方式点出JSON字符串里的每一个key.从而拿到key所对应的值（JSON数据其实就是键值对‘key-value’）\r",
+									"var successRes=jsonData.success;\r",
+									"//调用postman的测试方法(第一种)，就是pm.test(). 他有两个参数:第一个参数写预期结果，也就是你想要测试的内容，可以写中文，这样的话，可以在执行完以后，在Test Results里看到，如果成功就是pass,失败就是fail并同时给出失败原因;第二个参数是一个类似于Python里的lambda匿名函数，他是一个检查函数，用法如下：\r",
+									"\r",
+									"//第一种：Response body:Contains string\r",
+									"//作用：检查body里面包含你想要的预期结果的值(include括号内)，而pm.expect括号内的，你需要输入检查的范围；\r",
+									"pm.test(\"检查success的值是true\", function () {\r",
+									"    pm.expect(\"\\\"\"+successRes+\"\\\"\").to.include(\"true\");\r",
+									"});\r",
+									"\r",
+									"console.log(\"\\\"\"+successRes+\"\\\"\")\r",
+									"\r",
+									"\r",
+									"//第二种：Response Body:JSON value check\r",
+									"//作用：显然，如果你确认你的响应body是JSON字符串，那么使用这个(测试)断言方法最为便捷\r",
+									"pm.test(\"检查success的值是true\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.success).to.eql(true);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"//第三种：Status code: Code name has string\r",
+									"//作用：检查状态码的message,就是JMeter里的sampler result -> Response message,状态码message是行业规定好的，比如200就是大写的OK\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status codename has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"//第四种：Response time is less than 200ms\r",
+									"//作用：这种方式是检查响应时间是不是在设定的值以内的，如果超过了，就断言错误，默认是200毫秒\r",
+									"\r",
+									"pm.test(\"Response time is less than 100ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(100);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "accesstoken",
+									"value": "{{accToken}}",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "218002022",
+									"type": "text"
+								},
+								{
+									"key": "tab",
+									"value": "share",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "内容日荣内容",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ipAdress}}/topics",
+							"host": [
+								"{{ipAdress}}"
+							],
+							"path": [
+								"topics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postman中其他常用的javascript代码解释",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "510ec088-7aba-4d0f-9857-29d04b97206e",
+								"exec": [
+									"",
+									"//*********全局变量操作************【命名最好用驼峰命名法例如 rendResebt】",
+									"//新建全局变量并赋值",
+									"pm.globals.set(\"variable_key\", \"variable_value\");",
+									"pm.globals.set(\"变量名\",\"变量名\")",
+									"//读取全局变量",
+									"pm.globals.get(\"已存在的变量名\");",
+									"//删除全局变量",
+									"pm.globals.unset(\"已存在的变量名\");",
+									"",
+									"",
+									"",
+									"//**********环境变量操作**************",
+									"//新建环境变量至当前你所选中的环境并赋值",
+									"pm.environment.set(\"topicId\", \"topicId\");",
+									"//读取环境变量",
+									"pm.globals.get(\"topicId\");",
+									"//删除全局变量",
+									"pm.environment.unset(\"topicId\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n\"accesstoken\":\"{{accToken}}\",\n\"topic_id\":\"{{topicId}}\",\n\"title\":\"218002022\",\n\"tab\":\"share\",\n\"content\":\"woyebuzhdao qwew\"\n\t\n\t\n\t\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ipAdress}}/topics",
+							"host": [
+								"{{ipAdress}}"
+							],
+							"path": [
+								"topics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "编辑主题1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "72037f1d-70ea-4f9b-9542-2f8f93ec13a0",
+								"exec": [
+									"//正则表达式提取",
+									"",
+									"// var regVa10=(pm.response.text().match(new RegExp(\"\\\"success\\\":(.+?),\")))[0];",
+									"// pm.globals.set(\"regVa10\", regVa10);",
+									"",
+									"//分开写",
+									"var regularExpression =RegExp(\"\\\"success\\\":(.+?),\")",
+									"var regVa10=(pm.response.text().match(regularExpression))[0];",
+									"var regVa11=(pm.response.text().match(regularExpression))[1];",
+									"console.log(regVa10);",
+									"console.log(regVa11);",
+									"//正则表达式提取",
+									"",
+									"// var regVa10=(responseBody.match(new RegExp(\"\\\"success\\\":(.+?),\")))[1];",
+									"// pm.globals.set(\"regVa10\", regVa10);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n\"accesstoken\":\"{{accToken}}\",\n\"topic_id\":\"{{topicId}}\",\n\"title\":\"218002022\",\n\"tab\":\"share\",\n\"content\":\"woyebuzhdao qwew\"\n\t\n\t\n\t\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ipAdress}}/topics",
+							"host": [
+								"{{ipAdress}}"
+							],
+							"path": [
+								"topics"
+							]
+						},
+						"description": "包含正则表达式，及另外一种断言方式"
+					},
+					"response": []
+				},
+				{
+					"name": "主题",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5c467e99-c122-46ad-ac70-9bec7c0b263b",
+								"exec": [
+									"",
+									"//我是注释语句",
+									"var jsonData=JSON.parse(responseBody);",
+									"var topicId=jsonData.topic_id;",
+									"pm.environment.set(\"topicId\",topicId);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "accesstoken",
+									"value": "{{accToken}}",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "122223232323",
+									"type": "text"
+								},
+								{
+									"key": "tab",
+									"value": "share",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "wwewewee",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ipAdress}}/topics",
+							"host": [
+								"{{ipAdress}}"
+							],
+							"path": [
+								"topics"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "4dcaaf66-10ef-4c58-ab28-23c79e06eb49",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2cddda5f-f1cd-4963-b523-a0ce32c9730a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

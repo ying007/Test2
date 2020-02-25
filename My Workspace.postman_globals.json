@@ -1,0 +1,44 @@
+{
+	"id": "146e52f0-fd32-4814-8e58-8a3c0f4d5eb7",
+	"values": [
+		{
+			"key": "the_token",
+			"value": "bearer adb0a7a2-ba35-495b-b2f1-53889b0d280e",
+			"enabled": true
+		},
+		{
+			"key": "accessToken66",
+			"value": "88f177b5-8776-487e-8ad4-9fac176b5337",
+			"enabled": true
+		},
+		{
+			"key": "topicId",
+			"value": "5e4a5a281291843204eb1b7d",
+			"enabled": true
+		},
+		{
+			"key": "regVal0",
+			"value": "\"success\":true,",
+			"enabled": true
+		},
+		{
+			"key": "regVal1",
+			"value": "true",
+			"enabled": true
+		},
+		{
+			"key": "successRes",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "regVa10",
+			"value": "",
+			"enabled": true
+		}
+	],
+	"name": "My Workspace Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2020-02-19T05:53:22.408Z",
+	"_postman_exported_using": "Postman/7.18.1"
+}
